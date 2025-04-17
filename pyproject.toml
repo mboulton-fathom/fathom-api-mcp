@@ -1,0 +1,13 @@
+[project]
+name = "fathom-api-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fathom-global-client-sdk>=0.10.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.6.0",
+    "protobuf>=6.30.2",
+    "ruff>=0.11.5",
+]
