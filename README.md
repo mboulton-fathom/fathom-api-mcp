@@ -26,3 +26,19 @@ mcpServers:
     - run
     - hello.py
 ```
+
+## Docker
+
+To build the Docker image:
+
+```bash
+docker build -t fathom-api-mcp .
+```
+
+To run the Docker image:
+
+```bash
+docker run --rm --name fathom-api-mcp -e FATHOM_CLIENT_ID=your_client_id -e FATHOM_CLIENT_SECRET=your_client_secret fathom-api-mcp
+```
+
+Note: Replace `your_client_id` and `your_client_secret` with your actual Fathom client ID and secret.
