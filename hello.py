@@ -96,7 +96,9 @@ async def get_layer_id(return_period: int, year: int, type: str) -> str:
 
 
 @click.command()
-@click.option('--transport', default='stdio', help='Transport to use for the MCP server.')
+@click.option(
+    "--transport", default="stdio", help="Transport to use for the MCP server."
+)
 def run_mcp(transport: str):
     """Runs the MCP server with the specified transport."""
     mcp.run(transport=transport)
@@ -105,4 +107,3 @@ def run_mcp(transport: str):
 if __name__ == "__main__":
     # Initialize and run the server
     run_mcp()
-
