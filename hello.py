@@ -1,6 +1,7 @@
 import functools
 import os
 from typing import List, TypedDict, Tuple
+import click
 import httpx
 
 from fathom.sdk.v2 import Client, point
@@ -94,6 +95,14 @@ async def get_layer_id(return_period: int, year: int, type: str) -> str:
     return f"FLOOD_MAP-1ARCSEC-NW_OFFSET-1in{return_period}-{type}-DEFENDED-DEPTH-{year}-PERCENTILE50-v3.1"
 
 
+@click.command()
+@click.option('--transport', default='stdio', help='Transport to use for the MCP server.')
+def run_mcp(transport: str):
+    """Runs the MCP server with the specified transport."""
+    mcp.run(transport=transport)
+
+
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp.run(transport="stdio")
+    run_mcp()
+
